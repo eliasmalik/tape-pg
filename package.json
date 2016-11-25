@@ -1,0 +1,30 @@
+{
+  "name": "tape-pg",
+  "version": "0.1.0",
+  "description": "Decorator for tape to provide pg connection",
+  "author": "eliascodes",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape 'tests/index.test.js'",
+    "posttest": "npm run lint",
+    "cover": "istanbul cover tape tests/index.test.js",
+    "lint": "node_modules/.bin/eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "istanbul": "^0.4.5",
+    "pg": "^6.1.0",
+    "tape": "^4.6.2"
+  },
+  "keywords": [
+    "postgres",
+    "postgresql",
+    "tape",
+    "test",
+    "database"
+  ],
+  "repository": "https://github.com/eliascodes/tape-pg.git",
+  "homepage": "https://github.com/eliascodes/tape-pg",
+  "bugs": "https://github.com/eliascodes/tape-pg/issues"
+}
