@@ -3,7 +3,7 @@ node_js:
   - "6"
   - "5"
 services:
-  - postgres
+  - postgresql
 script: npm run cover
 before_script:
   - psql -c 'create database tape_test;' -U postgres
