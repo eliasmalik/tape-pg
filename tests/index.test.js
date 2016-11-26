@@ -1,14 +1,14 @@
 'use strict';
 
 var tape = require('tape');
-var decorators = require('../index.js');
+var tape_pg = require('../index.js');
 var pg = require('pg');
 
-var _client = new pg.Client({
+var connection = {
   host: 'localhost',
   port: 5432,
   database: 'tape_test',
-});
+};
 
 var model = `
   BEGIN;
@@ -22,7 +22,7 @@ var model = `
   WITHOUT OIDS;
 `;
 
-var pgtest = decorators.pgConnection({ _client, model }, tape);
+var pgtest = tape_pg({ pg, connection, model }, tape);
 
 pgtest('have been passed client', (t, client) => {
   t.ok(client instanceof pg.Client);

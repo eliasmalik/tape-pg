@@ -10,7 +10,7 @@
  * @param  {tape.Test} tape :: The tape test function
  * @return {Function}       :: Test function w/ tape compatible API
  */
-exports.pgConnection = function (opts, tape) {
+module.exports = function (opts, tape) {
   var pg = opts.pg || require('pg');
   var model = opts.model || '';
   var pool = new pg.Pool(opts.connection);
