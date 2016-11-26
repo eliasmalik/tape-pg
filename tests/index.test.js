@@ -17,7 +17,7 @@ var model = `
   CREATE TABLE testtable (
     id BIGINT NOT NULL UNIQUE,
     name VARCHAR NOT NULL,
-    deets jsonb
+    deets VARCHAR
   )
   WITHOUT OIDS;
 `;
@@ -40,13 +40,13 @@ pgtest('select should be empty', (t, client) => {
 pgtest('insert should work', (t, client) => {
   client.query(
     'INSERT INTO testtable (id, name, deets) VALUES ($1, $2, $3) RETURNING *',
-    [0, 'dave', '{}'],
+    [0, 'dave', 'mydeets'],
     (err, result) => {
       t.notOk(err, 'No error');
       t.equal(result.rowCount, 1, 'Row inserted');
       t.equal(result.rows[0].id, '0');
       t.equal(result.rows[0].name, 'dave');
-      t.deepEqual(result.rows[0].deets, {});
+      t.deepEqual(result.rows[0].deets, 'mydeets');
       t.end();
     }
   );
