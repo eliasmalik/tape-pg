@@ -35,7 +35,7 @@ module.exports = function (opts, tape) {
         _release = release;
 
         // Need to drop ?
-        _client.query(model || '')
+        _client.query(model)
           .then(() => t.end())
           .catch((err) => {
             t.fail(err);

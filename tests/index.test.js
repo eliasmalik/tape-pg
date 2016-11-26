@@ -60,6 +60,12 @@ pgtest('should not keep record from previous test', (t, client) => {
   });
 });
 
+pgtest('can pass expected number of assertions', 1, (t, client) => {
+  client.query('', (err, result) => {
+    t.equal(result.rowCount, null, 'No query');
+  });
+});
+
 pgtest.onFinish(() => {
   console.log('ONFINISH!!');
 });
