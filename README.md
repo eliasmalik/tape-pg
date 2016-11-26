@@ -1,6 +1,13 @@
-# tape-pg
+# [tape-pg](https://www.npmjs.com/package/tape-pg)
+
+[![Build](https://img.shields.io/travis/eliascodes/tape-pg.svg)](https://travis-ci.org/eliascodes/tape-pg)
+[![Coverage](https://codeclimate.com/github/eliascodes/tape-pg/badges/coverage.svg)](https://codeclimate.com/github/eliascodes/tape-pg/coverage)
+[![npm](https://img.shields.io/npm/dt/tape-pg.svg)](https://www.npmjs.com/package/tape-pg)
+
 
 Decorates the tape function to provide a `node-postgres` client in each test.
+
+Also optionally runs SQL query before each test.
 
 ## Usage
 
