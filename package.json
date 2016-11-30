@@ -6,9 +6,9 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "tape 'tests/index.test.js'",
+    "test": "tape 'tests/index.test.js' | tap-spec",
     "posttest": "npm run lint",
-    "cover": "istanbul cover tape tests/index.test.js",
+    "cover": "istanbul cover tape tests/index.test.js | tap-spec",
     "lint": "node_modules/.bin/eslint ."
   },
   "devDependencies": {
@@ -16,6 +16,7 @@
     "eslint": "^3.10.2",
     "istanbul": "^0.4.5",
     "pg": "^6.1.0",
+    "tap-spec": "^4.1.1",
     "tape": "^4.6.2"
   },
   "keywords": [
